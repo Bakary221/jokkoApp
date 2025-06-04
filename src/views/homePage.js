@@ -2,6 +2,8 @@ import { renderChat } from "./chatViews";
 import { renderSideBar } from "./sideBarView";
 import { renderView } from "../components/components";
 import { renderInputSearchUsers } from "./searchInput";
+import { renderFormAddGroupe } from "./formAddGroup";
+
 
 export function navigationSideBar(home){
     const sideBars = home.querySelectorAll("#sideBar i");
@@ -23,5 +25,9 @@ export function renderHomePage(){
     home.appendChild(renderInputSearchUsers());
     home.appendChild(renderChat());
     navigationSideBar(home);
+
+    const addGroupe =  home.querySelector('#addGroupe');
+    addGroupe.addEventListener('click' , renderFormAddGroupe);
+    
     return home;
 }

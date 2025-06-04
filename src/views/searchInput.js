@@ -7,7 +7,7 @@ export function renderInputSearchUsers(){
     messageList.innerHTML = `
         <div class="flex items-center justify-between">
         <h2 class="text-xl font-bold text-gray-600">Messages</h2>
-        <i class="fa-solid fa-pen-to-square p-2 bg-white rounded-md text-gray-600 cursor-pointer hover:bg-blue-500 hover:text-white"></i>
+        <i class="fa-solid fa-pen-to-square p-2 bg-white rounded-md text-gray-600 cursor-pointer hover:bg-blue-500 hover:text-white" id="addGroupe"></i>
         </div>
         <div class="relative">
           <input class="p-1 rounded-2xl border-2 outline-none pl-4 pr-10 w-full bg-[#f8f9fb]" type="text" placeholder="Rechercher un utilisateur... ">

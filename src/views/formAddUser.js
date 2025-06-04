@@ -16,7 +16,6 @@ export function renderFormAddUser() {
           type="text" 
           name="nom" 
           placeholder="Nom" 
-          required 
           class="pl-10 pr-4 py-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition" 
         />
       </div>
@@ -26,8 +25,7 @@ export function renderFormAddUser() {
         <input 
           type="text" 
           name="prenom" 
-          placeholder="Prénom" 
-          required 
+          placeholder="Prénom"  
           class="pl-10 pr-4 py-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition" 
         />
       </div>
@@ -38,7 +36,6 @@ export function renderFormAddUser() {
           type="tel" 
           name="telephone" 
           placeholder="Téléphone" 
-          required 
           class="pl-10 pr-4 py-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition" 
         />
       </div>
@@ -61,24 +58,6 @@ export function renderFormAddUser() {
 
   overlay.appendChild(modal);
   document.body.appendChild(overlay);
-
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes fade-in-down {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    .animate-fade-in-down {
-      animation: fade-in-down 0.3s ease-out;
-    }
-  `;
-  document.head.appendChild(style);
 
   // Gestion fermeture
   document.getElementById('close-popup').addEventListener('click', () => {

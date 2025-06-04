@@ -52,8 +52,8 @@ export function renderChat(){
         <!-- Zone d'envoi de message -->
         <div class="flex items-center gap-2 mt-2 p-2">
             <input type="text" placeholder="Écris ton message..." class="flex-1 p-2 rounded-2xl border border-gray-300 outline-none bg-white" />
-            <button class="bg-blue-500 text-white px-4 py-2 rounded-2xl hover:bg-blue-600">
-                Envoyer
+            <button class="bg-blue-500 text-white px-5 py-2 rounded-2xl hover:bg-blue-600">
+                <i class="fa-solid fa-paper-plane"></i>
             </button>
         </div>`;
 
