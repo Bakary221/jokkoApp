@@ -1,0 +1,13 @@
+import { renderMessagesUsers } from "./views/messagesUsers";
+import { renderMessagesGroups } from "./views/messagesGroups";
+import { renderDiffusions } from "./views/diffusion";
+import { renderFormAddUser } from "./views/formAddUser";
+
+export const itemsSideBar = {
+    0 : (conteneur)=>{renderMessagesUsers(conteneur)}, 
+    1 : (conteneur)=>{renderMessagesGroups(conteneur)}, 
+    2 : (conteneur)=>{renderDiffusions(conteneur)},
+    // 3 : (conteneur)=>{showMessages(conteneur , true)},
+    4 : (conteneur)=>{renderFormAddUser(conteneur)},
+    // 5 : logout,
+};
