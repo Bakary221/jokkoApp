@@ -1,5 +1,5 @@
 import { router } from './router.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  router('/home');
+  router('/login');
 });

@@ -11,3 +11,11 @@ export const itemsSideBar = {
     4 : (conteneur)=>{renderFormAddUser(conteneur)},
     // 5 : logout,
 };
+
+
+
+export const errorsMessages = {
+    champTelephone : "Le Numéro de telephone ne doit pas etre vide.",
+    champPassword : "Le Mot de passe ne doit pas etre vide.",
+    TelephoneAndPassword : "Le Telephone ou Mot de passe incorrecte. Reessaye!"
+}
