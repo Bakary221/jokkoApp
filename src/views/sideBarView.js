@@ -1,3 +1,4 @@
+import { router } from "../router";
 
 export function renderSideBar(){
     const sideBar = document.createElement('section');
@@ -7,14 +8,20 @@ export function renderSideBar(){
     sideBar.innerHTML = `
         <h2 class="font-bold">JokkoApp</h2>
         <div class="flex flex-col items-center gap-5">
-          <i class="fa-solid fa-message border-[1px] border-white p-4 rounded-lg hover:bg-blue-300 cursor-pointer"></i>
+          <i class="fa-solid fa-message border-[1px] border-white p-4 rounded-lg hover:bg-blue-300 cursor-pointer bg-blue-300"></i>
           <i class="fa-solid fa-user-group border-[1px] border-white p-4 rounded-lg hover:bg-blue-300 cursor-pointer"></i>
           <i class="fa-solid fa-arrows-turn-to-dots border-[1px] border-white p-4 rounded-lg hover:bg-blue-300 cursor-pointer"></i>
           <i class="fa-solid fa-box-archive border-[1px] border-white p-4 rounded-lg hover:bg-blue-300 cursor-pointer"></i>
           <i class="fa-solid fa-plus border-[1px] border-white p-4 rounded-lg hover:bg-blue-300 cursor-pointer"></i>
         </div>
-        <i class="fa-solid fa-right-from-bracket border-[1px] border-white p-4 rounded-lg hover:bg-red-500 hover:border-red-500 cursor-pointer"></i>
+        <i class="fa-solid fa-right-from-bracket border-[1px] border-white p-4 rounded-lg hover:bg-red-500 hover:border-red-500 cursor-pointer" id = "deconnexion"></i>
      `;
+
+      const btnDeconnexion = sideBar.querySelector('#deconnexion');
+      btnDeconnexion.addEventListener('click' , ()=>{
+        localStorage.removeItem('user_id');
+        router('/login');
+      })
     
      return sideBar;
 }

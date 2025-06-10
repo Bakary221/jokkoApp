@@ -1,13 +1,21 @@
+import { store } from "../store/store";
+
+
+
 
 export function renderChat(){
 
+    const state = store.getState();
+    const currentUser = state.currentUser;
+    
+    
     const chat = document.createElement('section');
     chat.className = 'flex-1 p-5 flex flex-col h-full';
 
     chat.innerHTML = ` 
         <div class="text-gray-500 flex items-center justify-end gap-5 mb-5">
             <i class="fa-solid fa-bell"></i>
-            <div class="w-10 h-10 bg-blue-500 text-white flex font-bold items-center justify-center rounded-full">BD</div>
+            <div class="w-10 h-10 bg-blue-500 text-white flex font-bold items-center justify-center rounded-full">${currentUser.avatar}</div>
         </div>
 
         <div class="h-[1px] w-full bg-gray-100"></div>

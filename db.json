@@ -1,0 +1,161 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "login": "bakary",
+      "nom": "Diassy",
+      "prenom": "Bakary",
+      "telephone": "778627052",
+      "avatar": "BD",
+      "status": "online",
+      "lastSeen": "10:23",
+      "contacts": [
+        2,
+        3
+      ],
+      "password": "1234",
+      "archive": false
+    },
+    {
+      "id": 2,
+      "login": "fall",
+      "nom": "Fall",
+      "prenom": "Khadidiatou",
+      "telephone": "784318598",
+      "avatar": "KF",
+      "status": "online",
+      "lastSeen": "12:45",
+      "contacts": [
+        3
+      ],
+      "password": "1234",
+      "archive": false
+    },
+    {
+      "id": 3,
+      "login": "sock",
+      "nom": "Sock",
+      "prenom": "Anna",
+      "telephone": "770112233",
+      "avatar": "AS",
+      "status": "offline",
+      "lastSeen": "12:45",
+      "contacts": [
+        2,
+        1
+      ],
+      "password": "1234",
+      "archive": false
+    },
+    {
+      "id": 5,
+      "login": "jamila",
+      "nom": "Fall",
+      "prenom": "Jamila",
+      "telephone": "778627051",
+      "avatar": "JF",
+      "status": "online",
+      "lastSeen": "00:08",
+      "contacts": [],
+      "password": "1234",
+      "archive": false
+    },
+    {
+      "id": 6,
+      "login": "fakar",
+      "nom": "Diop",
+      "prenom": "fakar",
+      "telephone": "778627057",
+      "avatar": "FD",
+      "status": "online",
+      "lastSeen": "08:05",
+      "contacts": [],
+      "password": "1234",
+      "archive": false
+    }
+  ],
+  "usersArchived": [],
+  "messages": [
+    {
+      "id": 101,
+      "senderId": 1,
+      "receiverId": 2,
+      "content": "Salut, comment ça va ?",
+      "timestamp": "01:34",
+      "type": "text",
+      "seen": true
+    },
+    {
+      "id": 102,
+      "senderId": 2,
+      "receiverId": 1,
+      "content": "Bien et toi ?",
+      "timestamp": "02:34",
+      "type": "text",
+      "seen": false
+    },
+    {
+      "id": 103,
+      "senderId": 3,
+      "receiverId": 1,
+      "content": "L'achimiste nakamou ?",
+      "timestamp": "02:34",
+      "type": "text",
+      "seen": false
+    },
+    {
+      "id": 103,
+      "senderId": 2,
+      "receiverId": 1,
+      "content": "Yaguii bax ?",
+      "timestamp": "02:34",
+      "type": "text",
+      "seen": false
+    }
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "name": "Groupe Sonatel",
+      "avatar": "GR",
+      "members": [
+        1,
+        2,
+        3
+      ],
+      "admins": [
+        1
+      ],
+      "createdAt": "23:08",
+      "archive": false
+    },
+    {
+      "id": 2,
+      "name": "Dev Team",
+      "avatar": "DE",
+      "members": [
+        4,
+        5
+      ],
+      "admins": [
+        4
+      ],
+      "createdAt": "12:45",
+      "archive": true
+    }
+  ],
+  "groupMessages": [
+    {
+      "id": 201,
+      "groupId": 1,
+      "senderId": 2,
+      "content": "Bienvenue dans le groupe !",
+      "timestamp": "23:23",
+      "type": "text",
+      "seenBy": [
+        2
+      ],
+      "seen": false
+    }
+  ]
+}
