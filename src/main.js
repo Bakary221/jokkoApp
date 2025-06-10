@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (user) {
       store.setState({ currentUser: user });
       router('/home');
+      console.log("Bienvenu");
+      
       return;
     }
   }
