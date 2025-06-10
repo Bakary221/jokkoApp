@@ -1,14 +1,12 @@
 // services/apiService.js
 
-const address = "http://localhost:3001/";
+const address = "https://json-backend-p9tf.onrender.com/";
 
-// GET : récupérer une ressource
 export async function fetchOnly(elements) {
   const response = await fetch(address + elements);
   return await response.json();
 }
 
-// POST : ajouter une ressource
 export async function addUser(user) {
   const response = await fetch(address + "users", {
     method: "POST",
@@ -17,7 +15,7 @@ export async function addUser(user) {
     },
     body: JSON.stringify(user),
   });
-  return await response.json(); // retourne l'objet créé avec son id
+  return await response.json();
 }
 
 // PATCH : modifier une ressource partiellement

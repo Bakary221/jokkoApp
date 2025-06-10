@@ -129,7 +129,7 @@ export function renderSignup(store) {
     localStorage.setItem("user_id", savedUser.id);
     store.setState({ currentUser: savedUser, users: [...users, savedUser] });
 
-    router("/home");
+    router("/home"); 
   });
 
   return signup;

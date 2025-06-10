@@ -72,6 +72,45 @@
       "contacts": [],
       "password": "1234",
       "archive": false
+    },
+    {
+      "id": 7,
+      "login": "anna",
+      "nom": "Sock",
+      "prenom": "Anna",
+      "telephone": "778627058",
+      "avatar": "AS",
+      "status": "online",
+      "lastSeen": "10:44",
+      "contacts": [],
+      "password": "1234",
+      "archive": false
+    },
+    {
+      "id": 8,
+      "login": "bakary",
+      "nom": "Diassy",
+      "prenom": "Bakary",
+      "telephone": "778627059",
+      "avatar": "BD",
+      "status": "online",
+      "lastSeen": "10:47",
+      "contacts": [],
+      "password": "1234",
+      "archive": false
+    },
+    {
+      "id": 9,
+      "login": "bamba",
+      "nom": "diop",
+      "prenom": "Bamba",
+      "telephone": "778627010",
+      "avatar": "BD",
+      "status": "online",
+      "lastSeen": "15:21",
+      "contacts": [],
+      "password": "1234",
+      "archive": false
     }
   ],
   "usersArchived": [],
