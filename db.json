@@ -9,7 +9,10 @@
       "avatar": "BD",
       "status": "online",
       "lastSeen": "10:23",
-      "contacts": [2, 3],
+      "contacts": [
+        2,
+        3
+      ],
       "password": "1234",
       "archive": false
     },
@@ -20,9 +23,11 @@
       "prenom": "Khadidiatou",
       "telephone": "784318598",
       "avatar": "KF",
-      "status": "offline",
+      "status": "online",
       "lastSeen": "12:45",
-      "contacts": [3],
+      "contacts": [
+        3
+      ],
       "password": "1234",
       "archive": false
     },
@@ -35,7 +40,36 @@
       "avatar": "AS",
       "status": "offline",
       "lastSeen": "12:45",
-      "contacts": [2, 1],
+      "contacts": [
+        2,
+        1
+      ],
+      "password": "1234",
+      "archive": false
+    },
+    {
+      "id": 5,
+      "login": "jamila",
+      "nom": "Fall",
+      "prenom": "Jamila",
+      "telephone": "778627051",
+      "avatar": "JF",
+      "status": "online",
+      "lastSeen": "00:08",
+      "contacts": [],
+      "password": "1234",
+      "archive": false
+    },
+    {
+      "id": 6,
+      "login": "fakar",
+      "nom": "Diop",
+      "prenom": "fakar",
+      "telephone": "778627057",
+      "avatar": "FD",
+      "status": "online",
+      "lastSeen": "08:05",
+      "contacts": [],
       "password": "1234",
       "archive": false
     }
@@ -59,6 +93,24 @@
       "timestamp": "02:34",
       "type": "text",
       "seen": false
+    },
+    {
+      "id": 103,
+      "senderId": 3,
+      "receiverId": 1,
+      "content": "L'achimiste nakamou ?",
+      "timestamp": "02:34",
+      "type": "text",
+      "seen": false
+    },
+    {
+      "id": 103,
+      "senderId": 2,
+      "receiverId": 1,
+      "content": "Yaguii bax ?",
+      "timestamp": "02:34",
+      "type": "text",
+      "seen": false
     }
   ],
   "groups": [
@@ -66,8 +118,14 @@
       "id": 1,
       "name": "Groupe Sonatel",
       "avatar": "GR",
-      "members": [1, 2, 3],
-      "admins": [1],
+      "members": [
+        1,
+        2,
+        3
+      ],
+      "admins": [
+        1
+      ],
       "createdAt": "23:08",
       "archive": false
     },
@@ -75,8 +133,13 @@
       "id": 2,
       "name": "Dev Team",
       "avatar": "DE",
-      "members": [1, 4, 5],
-      "admins": [4],
+      "members": [
+        4,
+        5
+      ],
+      "admins": [
+        4
+      ],
       "createdAt": "12:45",
       "archive": true
     }
@@ -89,7 +152,10 @@
       "content": "Bienvenue dans le groupe !",
       "timestamp": "23:23",
       "type": "text",
-      "seenBy": [1, 2]
+      "seenBy": [
+        2
+      ],
+      "seen": false
     }
   ]
 }

@@ -8,10 +8,15 @@ import { renderFormAddGroupe } from "./formAddGroup";
 export function navigationSideBar(home){
     const sideBars = home.querySelectorAll("#sideBar i");
     const conteneur = home.querySelector('#discussions');
-    
+
     renderView(0 , conteneur);
     sideBars.forEach((sideBar , index) => {
-        sideBar.addEventListener('click' , ()=>{            
+        
+        sideBar.addEventListener('click' , ()=>{ 
+            sideBars.forEach(el => {
+            el.classList.remove('bg-blue-300')
+        });
+            sideBar.classList.add('bg-blue-300')
             renderView(index , conteneur);
         })
     });
