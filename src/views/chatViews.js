@@ -96,7 +96,6 @@ export function renderChat() {
       router("/home");
     };
 
-  // === Conversation de groupe ===
   } else if (selectedGroup) {
     const group = groups.find(g => g.id == selectedGroup.id);
     const groupMsgs = groupMessages.filter(msg => msg.groupId == group.id);
@@ -174,14 +173,13 @@ export function renderChat() {
     </div>
   `;
 
-  // Envoi du message
   const sendButton = chat.querySelector("#sendButton");
   const messageInput = chat.querySelector("#messageInput");
 
   sendButton.addEventListener("click", () => {
     const content = messageInput.value.trim();
     if (content) {
-      sendMessageHandler(content);
+      sendMessageHandler(content); 
       messageInput.value = "";
     }
   });
