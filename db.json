@@ -142,7 +142,7 @@
       "content": "jami",
       "timestamp": "22:41",
       "type": "text",
-      "seen": false
+      "seen": true
     },
     {
       "id": "1749772530601",
@@ -162,7 +162,7 @@
       "content": "sss",
       "timestamp": "00:05",
       "type": "text",
-      "seen": false
+      "seen": true
     },
     {
       "id": "1749773156465",
@@ -174,6 +174,15 @@
       "seenBy": [
         "1"
       ]
+    },
+    {
+      "id": "1749804870430",
+      "senderId": "2",
+      "receiverId": "1",
+      "content": "Salut Bara",
+      "timestamp": "08:54",
+      "type": "text",
+      "seen": true
     }
   ],
   "groups": [
@@ -209,83 +218,6 @@
     }
   ],
   "groupMessages": [
-    {
-      "id": "201",
-      "groupId": 1,
-      "senderId": 2,
-      "content": "Bienvenue dans le groupe !",
-      "timestamp": "23:23",
-      "type": "text",
-      "seenBy": [
-        2
-      ],
-      "seen": false
-    },
-    {
-      "id": "1749772977929",
-      "groupId": "1",
-      "senderId": "1",
-      "content": "ddddddddd",
-      "timestamp": "00:02",
-      "type": "text",
-      "seenBy": [
-        "1"
-      ]
-    },
-    {
-      "id": "1749773132829",
-      "groupId": "1",
-      "senderId": "1",
-      "content": "dddddddddddd",
-      "timestamp": "00:05",
-      "type": "text",
-      "seenBy": [
-        "1"
-      ]
-    },
-    {
-      "id": "1749773201006",
-      "groupId": "1",
-      "senderId": "1",
-      "content": "ddddddddd",
-      "timestamp": "00:06",
-      "type": "text",
-      "seenBy": [
-        "1"
-      ]
-    },
-    {
-      "id": "1749773272916",
-      "groupId": "1",
-      "senderId": "1",
-      "content": "ssssssssss",
-      "timestamp": "00:07",
-      "type": "text",
-      "seenBy": [
-        "1"
-      ]
-    },
-    {
-      "id": "1749804681688",
-      "groupId": "1",
-      "senderId": "1",
-      "content": "dddddddddddddddd",
-      "timestamp": "08:51",
-      "type": "text",
-      "seenBy": [
-        "1"
-      ]
-    },
-    {
-      "id": "1749804694264",
-      "groupId": "2",
-      "senderId": "1",
-      "content": "ddddddddddddd",
-      "timestamp": "08:51",
-      "type": "text",
-      "seenBy": [
-        "1"
-      ]
-    }
+    
   ]
 }
