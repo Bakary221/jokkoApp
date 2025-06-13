@@ -2,10 +2,11 @@ import { itemsSideBar } from "../const";
 
 
 export function renderView(index , conteneur){
-
     const name = itemsSideBar[index];
     name(conteneur);
 }
+
+
 
 export function getContactsWithMessages(state) {
   const { currentUser, users, messages } = state;
@@ -14,6 +15,7 @@ export function getContactsWithMessages(state) {
   const currentUserId = Number(currentUser.id);
   const contactIds = new Set();
 
+  // Identifier tous les contacts avec lesquels currentUser a échangé
   messages.forEach(msg => {
     const senderId = Number(msg.senderId);
     const receiverId = Number(msg.receiverId);
@@ -26,33 +28,35 @@ export function getContactsWithMessages(state) {
   });
 
   const contactsWithMessages = [...contactIds].map(contactId => {
-    const contact = users.find(u => Number(u.id) === contactId && !u.archive); // <- 🔥 Ne prendre que les non archivés
+    const contact = users.find(u => Number(u.id) === contactId && !u.archive);
     if (!contact) return null;
 
-    const convMessages = messages.filter(m =>
-      (Number(m.senderId) === currentUserId && Number(m.receiverId) === contactId) ||
-      (Number(m.senderId) === contactId && Number(m.receiverId) === currentUserId)
+    // Filtrer tous les messages entre currentUser et ce contact
+    const convMessages = messages.filter(msg =>
+      (Number(msg.senderId) === currentUserId && Number(msg.receiverId) === contactId) ||
+      (Number(msg.senderId) === contactId && Number(msg.receiverId) === currentUserId)
     );
 
     const lastMessage = convMessages[convMessages.length - 1] || null;
 
-    const unreadCount = convMessages.filter(m =>
-      Number(m.senderId) === contactId &&
-      Number(m.receiverId) === currentUserId &&
-      !m.seen
+    // Compter uniquement les messages non vus reçus par le currentUser
+    const unreadCount = convMessages.filter(msg =>
+      Number(msg.receiverId) === currentUserId &&
+      Number(msg.senderId) === contactId &&
+      !msg.seen
     ).length;
 
     return {
       user: contact,
       lastMessage: lastMessage?.content || '',
       lastTime: lastMessage?.timestamp || '',
-      unreadCount
+      unreadCount,
     };
   });
 
+  // Supprimer les résultats nulls (ex : utilisateurs archivés)
   return contactsWithMessages.filter(Boolean);
 }
-
 
 
 export function getGroupsWithMessages(state) {
@@ -64,6 +68,7 @@ export function getGroupsWithMessages(state) {
   }
 
   const currentUserId = Number(currentUser.id);
+
   const userGroups = groups.filter(group =>
     group.members.map(Number).includes(currentUserId) && !group.archive
   );
@@ -72,13 +77,11 @@ export function getGroupsWithMessages(state) {
 
   const result = userGroups.map(group => {
     const messages = groupMessages
-      .filter(msg => msg.groupId === group.id)
-      .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+      .filter(msg => Number(msg.groupId) === Number(group.id))
+      .sort((a, b) => a.timestamp.localeCompare(b.timestamp));
+    const lastMessage = messages[messages.length - 1] || null;
+    const sender = lastMessage ? users.find(u => Number(u.id) === Number(lastMessage.senderId)) : null;
 
-    const lastMessage = messages[0] || null;
-    const sender = lastMessage ? users.find(u => u.id === lastMessage.senderId) : null;
-
-    // ❗ Messages non lus par currentUser : msg.seen == false ET currentUserId pas dans seenBy
     const unreadMessages = messages.filter(msg =>
       msg.seen === false && !msg.seenBy.includes(currentUserId)
     );
@@ -103,27 +106,31 @@ export function getGroupsWithMessages(state) {
 
 
 
+
 export function getUsersAndGroups(state) {
   const { currentUser, users, groups } = state;
 
   if (!currentUser) return { users: [], groups: [] };
 
-  const currentUserId = Number(currentUser.id);
-  
-  const currentUserObj = users.find(user => user.id === currentUserId);
-  
+  const currentUserId = Number(currentUser.id); 
+
+  const currentUserObj = users.find(user => Number(user.id) === currentUserId);
+
   if (!currentUserObj) return { users: [], groups: [] };
 
+  const contactIds = currentUserObj.contacts.map(id => Number(id));
+
   const contactUsers = users.filter(user => 
-    currentUserObj.contacts.includes(user.id) && user.id !== currentUserId
+    contactIds.includes(Number(user.id)) && Number(user.id) !== currentUserId
   );
-  
+
   const userGroups = groups.filter(group => 
-    group.members.includes(currentUserId) && !group.archive
+    group.members.map(id => Number(id)).includes(currentUserId) && !group.archive
   );
 
   return { users: contactUsers, groups: userGroups };
 }
+
 
 
 
@@ -133,23 +140,23 @@ export function getArchivedUsersAndGroups(state) {
   if (!currentUser) return { users: [], groups: [] };
 
   const currentUserId = Number(currentUser.id);
-  
-  const currentUserObj = users.find(user => user.id === currentUserId);
-  
+
+  const currentUserObj = users.find(user => Number(user.id) === currentUserId);
   if (!currentUserObj) return { users: [], groups: [] };
 
   const archivedContactUsers = users.filter(user => 
-    user.archive === true && 
-    currentUserObj.contacts.includes(user.id) && 
-    user.id !== currentUserId
-  );
-  const archivedUserGroups = groups.filter(group => 
-    group.archive === true && 
-    group.members.includes(currentUserId)
+    user.archive === true &&
+    currentUserId !== Number(user.id) &&
+    currentUserObj.contacts.includes(Number(user.id))
   );
 
-  return { 
-    users: archivedContactUsers, 
-    groups: archivedUserGroups 
+  const archivedUserGroups = groups.filter(group => 
+    group.archive === true &&
+    group.members.map(Number).includes(currentUserId)
+  );
+
+  return {
+    users: archivedContactUsers,
+    groups: archivedUserGroups
   };
 }

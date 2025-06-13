@@ -1,3 +1,5 @@
+import { AjouterUser } from "../services/authService";
+
 export function renderFormAddUser() {
   const overlay = document.createElement('div');
   overlay.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
@@ -8,8 +10,9 @@ export function renderFormAddUser() {
 
   modal.innerHTML = `
     <h2 class="text-3xl font-bold mb-6 text-center text-gray-800 tracking-wide">Ajouter un contact</h2>
-    <form id="form-add-user" class="flex flex-col gap-5">
 
+    <form id="form-add-user" class="flex flex-col gap-5">
+      <small class = "text-red-600 text-center hidden">Error messages</small>
       <div class="relative">
         <i class="fa-solid fa-user absolute top-3 left-3 text-gray-400"></i>
         <input 
@@ -18,6 +21,7 @@ export function renderFormAddUser() {
           placeholder="Nom" 
           class="pl-10 pr-4 py-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition" 
         />
+        <small class = "text-red-600 hidden">Error messages</small>
       </div>
 
       <div class="relative">
@@ -28,6 +32,7 @@ export function renderFormAddUser() {
           placeholder="Prénom"  
           class="pl-10 pr-4 py-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition" 
         />
+        <small class = "text-red-600 hidden">Error messages</small>
       </div>
 
       <div class="relative">
@@ -38,6 +43,7 @@ export function renderFormAddUser() {
           placeholder="Téléphone" 
           class="pl-10 pr-4 py-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition" 
         />
+        <small class = "text-red-600 hidden">Error messages</small>
       </div>
 
       <button 
@@ -59,16 +65,20 @@ export function renderFormAddUser() {
   overlay.appendChild(modal);
   document.body.appendChild(overlay);
 
-  // Gestion fermeture
   document.getElementById('close-popup').addEventListener('click', () => {
     overlay.remove();
   });
 
-  // Gestion soumission
-  document.getElementById('form-add-user').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const data = Object.fromEntries(new FormData(e.target));
-    console.log('Nouvel utilisateur:', data);
-    overlay.remove();
+  const form = modal.querySelector('#form-add-user');
+  
+  document.getElementById('form-add-user').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const ok = await AjouterUser(form);
+
+      if (ok) {
+          overlay.remove();
+      }
   });
+
 }

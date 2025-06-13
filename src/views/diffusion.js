@@ -3,13 +3,14 @@ import { store } from "../store/store";
 
 
 export function renderDiffusions(conteneur) {
+
   const { users, groups } = getUsersAndGroups(store.getState());
   const diffusionList = document.createElement('ul');
   diffusionList.className = 'flex flex-col gap-2 overflow-y-auto';
   diffusionList.setAttribute('id', 'diffusions');
 
   diffusionList.innerHTML = '';
-
+  
   // 👉 Ajouter les utilisateurs
   users.forEach(user => {
     const initials = user.prenom.charAt(0).toUpperCase() + (user.nom?.charAt(0)?.toUpperCase() || '');

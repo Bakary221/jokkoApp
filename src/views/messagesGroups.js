@@ -1,9 +1,13 @@
+import { router } from "../router";
 import { getGroupsWithMessages } from "../components/components";
 import { store } from "../store/store";
+import { renderChat } from "./chatViews";
 
 export function renderMessagesGroups(conteneur) {
   const { groupsWithMessages, totalUnreadMessages } = getGroupsWithMessages(store.getState());
 
+  console.log(groupsWithMessages , totalUnreadMessages);
+  
   const groupList = document.createElement('ul');
   groupList.className = 'flex flex-col gap-2 overflow-y-auto';
   groupList.setAttribute('id', 'groups');
@@ -31,6 +35,17 @@ export function renderMessagesGroups(conteneur) {
           : `<span class="w-6 h-6"></span>`}
       </div>
     `;
+
+    li.addEventListener('click', () => {
+      store.setState({ selectedGroup: group, selectedContact: null });
+      // console.log(store.getState());
+
+      const chat = document.querySelector('#chat');
+      chat.replaceWith(renderChat())
+      // console.log(chat);
+      
+      // router('/home'); 
+    });
 
     groupList.appendChild(li);
   });

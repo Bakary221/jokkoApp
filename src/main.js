@@ -10,18 +10,15 @@ document.addEventListener('DOMContentLoaded', async () => {
   const groups = await fetchOnly("groups");
   const groupMessages = await fetchOnly("groupMessages");
 
-  // Mettre les données dans le store
   store.setState({ users: users, messages: messages  , groups: groups  , groupMessages: groupMessages});
 
-  // Vérifier si un utilisateur est déjà connecté
   const userId = localStorage.getItem('user_id');
   if (userId) {
     const user = users.find(u => u.id == userId);
     if (user) {
       store.setState({ currentUser: user });
       router('/home');
-      console.log("Bienvenu");
-      
+            
       return;
     }
   }

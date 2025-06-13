@@ -18,5 +18,11 @@ export const itemsSideBar = {
 export const errorsMessages = {
     champTelephone : "Le Numéro de telephone ne doit pas etre vide.",
     champPassword : "Le Mot de passe ne doit pas etre vide.",
-    TelephoneAndPassword : "Le Telephone ou Mot de passe incorrecte. Reessaye!"
+    TelephoneAndPassword : "Le Telephone ou Mot de passe incorrecte. Reessaye!",
+    champsNom : "Le champs nom ne peut pas etre vide.",
+    champsPrenom : "Le champs prenom ne peut pas etre vide.",
+    champsTelephone : "Le champs telephone ne peut pas etre vide",
+    formatNumero : "Le format du numero est invalide.",
+    userNotInJokkoApp : "L'utilisateur n'a pas de compte sur jokkoApp.",
+    userAlreadyInContacts : "L'utilisateur existe déja dans votre contact."
 }

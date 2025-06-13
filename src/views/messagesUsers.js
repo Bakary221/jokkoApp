@@ -1,6 +1,7 @@
+import { router } from "../router/";
 import { getContactsWithMessages } from "../components/components";
 import { store } from "../store/store";
-
+router
 
 export function renderMessagesUsers(conteneur) {
   const contacts = getContactsWithMessages(store.getState());
@@ -38,6 +39,12 @@ export function renderMessagesUsers(conteneur) {
           : `<span class="w-6 h-6"></span>`}
       </div>
     `;
+
+    li.addEventListener('click', () => {
+      store.setState({ selectedGroup: null, selectedContact: user  });
+      router('/home')
+      
+    });
 
     messageList.appendChild(li);
   });

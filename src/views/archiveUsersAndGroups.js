@@ -10,10 +10,8 @@ export function renderArchives(conteneur) {
   archiveList.className = 'flex flex-col gap-2 overflow-y-auto';
   archiveList.setAttribute('id', 'archives');
 
-  // Vider le conteneur au préalable
   conteneur.innerHTML = '';
 
-  // Utilisateurs archivés
   users.forEach(user => {
     const initials = user.prenom.charAt(0).toUpperCase() + (user.nom?.charAt(0)?.toUpperCase() || '');
     const li = document.createElement('li');
@@ -35,7 +33,6 @@ export function renderArchives(conteneur) {
     archiveList.appendChild(li);
   });
 
-  // Groupes archivés
   groups.forEach(group => {
     const initials = group.avatar || group.name.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2);
     const li = document.createElement('li');

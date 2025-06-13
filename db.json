@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "login": "bakary",
       "nom": "Diassy",
       "prenom": "Bakary",
@@ -11,13 +11,15 @@
       "lastSeen": "10:23",
       "contacts": [
         2,
-        3
+        3,
+        6,
+        7
       ],
       "password": "1234",
       "archive": false
     },
     {
-      "id": 2,
+      "id": "2",
       "login": "fall",
       "nom": "Fall",
       "prenom": "Khadidiatou",
@@ -32,7 +34,7 @@
       "archive": false
     },
     {
-      "id": 3,
+      "id": "3",
       "login": "sock",
       "nom": "Sock",
       "prenom": "Anna",
@@ -48,7 +50,7 @@
       "archive": false
     },
     {
-      "id": 5,
+      "id": "5",
       "login": "jamila",
       "nom": "Fall",
       "prenom": "Jamila",
@@ -61,7 +63,7 @@
       "archive": false
     },
     {
-      "id": 6,
+      "id": "6",
       "login": "fakar",
       "nom": "Diop",
       "prenom": "fakar",
@@ -74,7 +76,7 @@
       "archive": false
     },
     {
-      "id": 7,
+      "id": "7",
       "login": "anna",
       "nom": "Sock",
       "prenom": "Anna",
@@ -87,7 +89,7 @@
       "archive": false
     },
     {
-      "id": 8,
+      "id": "8",
       "login": "bakary",
       "nom": "Diassy",
       "prenom": "Bakary",
@@ -100,7 +102,7 @@
       "archive": false
     },
     {
-      "id": 9,
+      "id": "9",
       "login": "bamba",
       "nom": "diop",
       "prenom": "Bamba",
@@ -116,7 +118,7 @@
   "usersArchived": [],
   "messages": [
     {
-      "id": 101,
+      "id": "101",
       "senderId": 1,
       "receiverId": 2,
       "content": "Salut, comment ça va ?",
@@ -125,36 +127,58 @@
       "seen": true
     },
     {
-      "id": 102,
-      "senderId": 2,
-      "receiverId": 1,
-      "content": "Bien et toi ?",
-      "timestamp": "02:34",
+      "id": "1749766974488",
+      "senderId": "1",
+      "receiverId": "2",
+      "content": "Jamila nkm",
+      "timestamp": "22:22",
+      "type": "text",
+      "seen": true
+    },
+    {
+      "id": "1749768081239",
+      "senderId": "1",
+      "receiverId": "2",
+      "content": "jami",
+      "timestamp": "22:41",
       "type": "text",
       "seen": false
     },
     {
-      "id": 103,
-      "senderId": 3,
-      "receiverId": 1,
-      "content": "L'achimiste nakamou ?",
-      "timestamp": "02:34",
+      "id": "1749772530601",
+      "groupId": "1",
+      "senderId": "1",
+      "content": "Merci Jami",
+      "timestamp": "23:55",
+      "type": "text",
+      "seenBy": [
+        "1"
+      ]
+    },
+    {
+      "id": "1749773122513",
+      "senderId": "1",
+      "receiverId": "2",
+      "content": "sss",
+      "timestamp": "00:05",
       "type": "text",
       "seen": false
     },
     {
-      "id": 103,
-      "senderId": 2,
-      "receiverId": 1,
-      "content": "Yaguii bax ?",
-      "timestamp": "02:34",
+      "id": "1749773156465",
+      "groupId": "1",
+      "senderId": "1",
+      "content": "xff",
+      "timestamp": "00:05",
       "type": "text",
-      "seen": false
+      "seenBy": [
+        "1"
+      ]
     }
   ],
   "groups": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Groupe Sonatel",
       "avatar": "GR",
       "members": [
@@ -169,10 +193,11 @@
       "archive": false
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Dev Team",
       "avatar": "DE",
       "members": [
+        1,
         4,
         5
       ],
@@ -180,12 +205,12 @@
         4
       ],
       "createdAt": "12:45",
-      "archive": true
+      "archive": false
     }
   ],
   "groupMessages": [
     {
-      "id": 201,
+      "id": "201",
       "groupId": 1,
       "senderId": 2,
       "content": "Bienvenue dans le groupe !",
@@ -195,6 +220,50 @@
         2
       ],
       "seen": false
+    },
+    {
+      "id": "1749772977929",
+      "groupId": "1",
+      "senderId": "1",
+      "content": "ddddddddd",
+      "timestamp": "00:02",
+      "type": "text",
+      "seenBy": [
+        "1"
+      ]
+    },
+    {
+      "id": "1749773132829",
+      "groupId": "1",
+      "senderId": "1",
+      "content": "dddddddddddd",
+      "timestamp": "00:05",
+      "type": "text",
+      "seenBy": [
+        "1"
+      ]
+    },
+    {
+      "id": "1749773201006",
+      "groupId": "1",
+      "senderId": "1",
+      "content": "ddddddddd",
+      "timestamp": "00:06",
+      "type": "text",
+      "seenBy": [
+        "1"
+      ]
+    },
+    {
+      "id": "1749773272916",
+      "groupId": "1",
+      "senderId": "1",
+      "content": "ssssssssss",
+      "timestamp": "00:07",
+      "type": "text",
+      "seenBy": [
+        "1"
+      ]
     }
   ]
 }

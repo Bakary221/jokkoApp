@@ -20,6 +20,7 @@ export function navigationSideBar(home){
             renderView(index , conteneur);
         })
     });
+
 }
 
 export function renderHomePage(){
@@ -36,3 +37,4 @@ export function renderHomePage(){
     
     return home;
 }
+
