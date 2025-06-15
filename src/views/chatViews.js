@@ -31,7 +31,7 @@ export function renderChat() {
 
   if (!selectedContact && !selectedGroup) {
     chat.innerHTML = `
-      <div class="text-gray-500 flex items-center justify-end gap-5 mb-5 sticky top-0 bg-white z-10 py-2">
+      <div class="text-gray-500 flex items-center justify-end gap-5 mb-5 sticky top-0 bg-white z-10 py-2 px-4">
         <i class="fa-solid fa-bell"></i>
         <div class="w-10 h-10 bg-blue-500 text-white flex font-bold items-center justify-center rounded-full">${currentUser.avatar}</div>
       </div>
