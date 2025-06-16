@@ -189,6 +189,21 @@
       ],
       "createdAt": "12:45",
       "archive": false
+    },
+    {
+      "id": "1749986159185",
+      "name": "Bakary Diassy",
+      "avatar": "BA",
+      "members": [
+        2,
+        3,
+        1
+      ],
+      "admins": [
+        "1"
+      ],
+      "createdAt": "11:15",
+      "archive": false
     }
   ],
   "groupMessages": []

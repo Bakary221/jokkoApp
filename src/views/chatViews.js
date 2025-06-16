@@ -168,19 +168,25 @@ export function renderChat() {
     <div class="flex items-center gap-2 mt-2 p-2">
       <input type="text" id="messageInput" placeholder="Écris ton message..." class="flex-1 p-2 rounded-2xl border border-gray-300 outline-none bg-white" />
       <button id="sendButton" class="bg-blue-500 text-white px-5 py-2 rounded-2xl hover:bg-blue-600">
-        <i class="fa-solid fa-paper-plane"></i>
+        <i class="fa-solid fa-microphone"></i>
       </button>
     </div>
   `;
-
   const sendButton = chat.querySelector("#sendButton");
   const messageInput = chat.querySelector("#messageInput");
+  const icon = sendButton.querySelector('i');
+
+  messageInput.addEventListener('keydown' , ()=>{
+    icon.className = "fa-solid fa-paper-plane"
+  })
 
   sendButton.addEventListener("click", () => {
     const content = messageInput.value.trim();
     if (content) {
       sendMessageHandler(content); 
       messageInput.value = "";
+      icon.className = "fa-solid fa-paper-plane"
+
     }
   });
 

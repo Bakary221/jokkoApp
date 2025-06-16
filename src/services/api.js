@@ -83,3 +83,15 @@ export async function addGroupMessage(message) {
     return await response.json();
 }
 
+
+
+export async function addGroup(group) {
+  const response = await fetch(address + "groups", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(group),
+  });
+  return await response.json();
+}
